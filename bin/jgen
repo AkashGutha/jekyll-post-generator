@@ -30,7 +30,7 @@ program
     "If set, this specifies the layout file to use. Use the layout file \n name without the file extension. Layout files must be placed \n in the  '_layouts' directory."
 )
   .option(
-    '-sub, --subtitle <description>',
+    '-s, --subtitle <description>',
     'If set, this specifies the subtitle for the page'
 )
   .option(
@@ -38,7 +38,7 @@ program
     'If set, this specifies the Author for the page'
 )
   .option(
-    '-himg, --header-image <name>',
+    '-H, --header-image <name>',
     'If set, this specifies the header image path for the page \n it should not contain / in the begining'
 )
   .action(function (postTitle, options) {
@@ -62,8 +62,8 @@ program
       } else {
         defaultHeader.title = postTitle
 
-        if(options.s){
-          defaultHeader.subtitle = options.s;
+        if (options.s) {
+          defaultHeader.subtitle = options.s
         }
 
         if (options.author) {
