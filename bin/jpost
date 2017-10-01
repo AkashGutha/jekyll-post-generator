@@ -4,7 +4,14 @@ var path = require("path"),
   utilities = require("../others/utilities"),
   VERSION = require("../package.json").version;
 
-var defaultHeader = { layout: "post", title: "", tags: "", categories: "" };
+var defaultHeader = {
+  layout: "post",
+  title: "",
+  subtitle: "",
+  tags: "",
+  categories: "",
+  author: ""
+};
 
 program.version(VERSION);
 // .option('-d, --date', 'Get current Date(format dd/mm/yyyy)')
@@ -15,11 +22,23 @@ program
   .description("Create a post")
   .option(
     "-c, --categories <items>",
-    "Specify the categor(y/ies) for the current article \n                          example: jposts create <postName> -c category1,category2,..."
+    "Specify the categor(y/ies) for the current article\nexample: jposts create <postName> -c category1,category2..."
   )
   .option(
     "-l, --layout <name>",
-    "If set, this specifies the layout file to use. Use the layout file\n                          name without the file extension. Layout files must be placed \n                          in the  '_layouts' directory."
+    "If set, this specifies the layout file to use. Use the layout file \n name without the file extension. Layout files must be placed \n in the  '_layouts' directory."
+  )
+  .option(
+    "-sub, --subtitle <description>",
+    "If set, this specifies the subtitle for the page"
+  )
+  .option(
+    "-a, --author <name>",
+    "If set, this specifies the Author for the page"
+  )
+  .option(
+    "-h, --header-image <name>",
+    "If set, this specifies the header image path for the page \n it should not contain / in the begining"
   )
   .action(function(postTitle, options) {
     "use strict";
@@ -28,9 +47,12 @@ program
       .trim()
       .replace(/[\s]{2,}/, "")
       .replace(/[ ]/g, "-");
+
     var finalPostTitle =
       utilities.getCurrentDate().join("-") + "-" + originalPostTitle + ".md";
+
     var filename = "." + path.sep + "_posts" + path.sep + finalPostTitle;
+
     // check if the title is not empty
     if (postTitle) {
       // check if the article doesn't exist already
@@ -38,7 +60,14 @@ program
         console.log("file already exists ");
       } else {
         defaultHeader.title = postTitle;
-        // console.log('file does not exist')
+
+        if (options.author) {
+          defaultHeader.author = options.author;
+        }
+
+        if(options.subtitle){
+          defaultHeader.subtitle = options.subtitle;
+        }
 
         if (options.categories) {
           defaultHeader.categories = options.categories.split(",");
