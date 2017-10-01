@@ -62,6 +62,10 @@ program
       } else {
         defaultHeader.title = postTitle
 
+        if(options.s){
+          defaultHeader.subtitle = options.s;
+        }
+
         if (options.author) {
           defaultHeader.author = options.author
         }
@@ -76,7 +80,7 @@ program
         if (options.layout) {
           defaultHeader.layout = options.layout
         }
-        if(options.himg){
+        if (options.himg) {
           defaultHeader.header_img = options.himg
         }
 
