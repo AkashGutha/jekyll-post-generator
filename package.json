@@ -1,9 +1,12 @@
 {
   "name": "jekyll-post-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate jekyll posts from the terminal",
   "bin": {
     "jgen": "./bin/jgen"
+  },
+  "scripts": {
+    "prepublishOnly": "standard-format -w bin/jgen others/utilities.js"
   },
   "repository": {
     "type": "git",
