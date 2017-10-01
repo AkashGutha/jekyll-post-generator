@@ -9,7 +9,7 @@ npm install -g jekyll-posts-generator
 In some computers you need to be an **administrator** to install this module, in that case 
 just precede the previous command with ``sudo``.
 
-After installing this package you can access the global command ``jposts`` from within any folder you want.
+After installing this package you can access the global command ``jgen`` from within any folder you want.
 
 #### Usage
 Navigate to some [jekyll website](http://jekyllrb.com/) folder that have the following structure :
@@ -30,42 +30,42 @@ Navigate to some [jekyll website](http://jekyllrb.com/) folder that have the fol
 Now you can create a basic article using the ``create command``
 
 ```
-jposts create-post 'my article title'
+jgen create-post 'my article title'
 ```
 OR
 ```
- jposts create-post "my article title"
+ jgen create-post "my article title"
 ```
 
 At this time if you go inside ``_posts`` folder, you will see a new file ``[YYYY-MM-DD]-my-article-title.md`` generated for you.
 #### Options
 You can see the list of options available with any command using
-``jposts [COMMAND_NAME] -h`` or ``jposts -h `` to list the options available with the global command ``jposts``,
+``jgen [COMMAND_NAME] -h`` or ``jgen -h `` to list the options available with the global command ``jgen``,
 Here is some examples :
 ```
 #list options available with create command
-jposts create-post -h
+jgen create-post -h
 
 # specify the current post categories
-jposts create-post <postName> -c category1,category2,...
+jgen create-post <postName> -c category1,category2,...
 
 # Specify the layout of the current post
-jposts create-post <postName> -l post
+jgen create-post <postName> -l post
 
 # Specify the author of the current post
-jposts create-post <postName> -a author
+jgen create-post <postName> -a author
 
 # Specify the subtitle of the current post
-jposts create-post <postName> -s subtitle
+jgen create-post <postName> -s subtitle
 
 # Specify the header image of the current post
-jposts create-post <postName> -himg header-image-path
+jgen create-post <postName> -himg header-image-path
 
 # You can specify multiple options at the same time :
-jposts create-post <postName> -l post -c category1,category2
+jgen create-post <postName> -l post -c category1,category2
 
 # Create new category 
-jposts create-category <categoryName> 
+jgen create-category <categoryName> 
 ```
 
 

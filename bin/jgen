@@ -22,7 +22,7 @@ program
   .description("Create a post")
   .option(
     "-c, --categories <items>",
-    "Specify the categor(y/ies) for the current article\nexample: jposts create <postName> -c category1,category2..."
+    "Specify the categor(y/ies) for the current article\nexample: jgen create <postName> -c category1,category2..."
   )
   .option(
     "-l, --layout <name>",
