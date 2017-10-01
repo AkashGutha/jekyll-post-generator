@@ -52,6 +52,15 @@ jposts create-post <postName> -c category1,category2,...
 # Specify the layout of the current post
 jposts create-post <postName> -l post
 
+# Specify the author of the current post
+jposts create-post <postName> -a author
+
+# Specify the subtitle of the current post
+jposts create-post <postName> -s subtitle
+
+# Specify the header image of the current post
+jposts create-post <postName> -himg header-image-path
+
 # You can specify multiple options at the same time :
 jposts create-post <postName> -l post -c category1,category2
 
