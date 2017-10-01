@@ -10,7 +10,8 @@ var defaultHeader = {
   subtitle: '',
   tags: '',
   categories: '',
-  author: ''
+  author: '',
+  header_img: ''
 }
 
 program.version(VERSION)
@@ -74,6 +75,9 @@ program
         }
         if (options.layout) {
           defaultHeader.layout = options.layout
+        }
+        if(options.himg){
+          defaultHeader.header_img = options.himg
         }
 
         utilities.write(
