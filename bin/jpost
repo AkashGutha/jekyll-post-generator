@@ -37,7 +37,7 @@ program
     "If set, this specifies the Author for the page"
   )
   .option(
-    "-h, --header-image <name>",
+    "-himg, --header-image <name>",
     "If set, this specifies the header image path for the page \n it should not contain / in the begining"
   )
   .action(function(postTitle, options) {
