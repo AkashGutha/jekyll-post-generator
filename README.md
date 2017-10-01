@@ -4,7 +4,7 @@ As you can guess from the title, this is a node module to generate [jekyll posts
 #### Installation
 type in your terminal :
 ```
-npm install -g jekyll-posts-generator
+npm install -g jekyll-post-generator
 ```
 In some computers you need to be an **administrator** to install this module, in that case 
 just precede the previous command with ``sudo``.
